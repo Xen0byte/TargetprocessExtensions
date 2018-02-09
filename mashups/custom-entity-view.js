@@ -1,23 +1,47 @@
 tau.mashups
     .addDependency('jQuery')
     .addDependency('tp/general/view')
-    .addMashup(function ($, view) {
-        view.onRender(function ($pageElement) {
-            var entityType = document.querySelector("div.view-header__icon em.tau-entity-icon.tau-entity-icon-full").textContent;
-            console.log("[DEBUG] Entiy Type: " + entityType);
+    .addDependency('tp3/mashups/topmenu')
+    .addDependency('tp3/mashups/popup')
+    .addMashup(function ($, view, topmenu, popup) {
+        view.onRender(function () {
+            var entityType = "NONE";
 
-            if (entityType === "Bug") {
-                var newTab = '<li class="i-role-tabheader tab-item i-taus" data-label="config" taustype="view-entity" tauspref="tab" style="visibility: visible;"><div class="tau-container"><div class="ui-label-container"><span class="ui-label" data-title="Config">Config</span></div></div></li>';
-
-                var $insertAfterTab = $pageElement.find("li div div span[data-title='History']");
-                var $insertAfterTabContainer = $insertAfterTab.closest(".i-role-tabheader.tab-item.i-taus");
-                console.log("[DEBUG] $insertAfterTab: " + $insertAfterTab + " | $insertAfterTabContainer: " + $insertAfterTabContainer);
-
-                if ($insertAfterTabContainer.length) {
-                    $insertAfterTabContainer.after(newTab);
+            function isOnPage() {
+                if ($("div.view-header__icon em.tau-entity-icon.tau-entity-icon-full").length) {
+                    entityType = document.querySelector("div.view-header__icon em.tau-entity-icon.tau-entity-icon-full").textContent;
                 }
+
+                console.log("[DEBUG] Entiy Type: " + entityType);
+                return entityType;
             }
+
+            var menuItem = topmenu.addItem({ title: 'Coming Soon™', icon: 'global-settings' });
+
+            menuItem.addItem('Customize View').onClick(function () {
+                if (isOnPage() === "Bug") {
+                    popup = new popup('<div style="position: absolute; height: 150px; width: 100%; top: calc((100% - 150px) / 2);">' +
+                    '<h1 align="center"><span style="color: #00A591;">Coming Soon™</span></h1>' +
+                    '</div>');
+
+                    popup.show();
+                }
+                else {
+                    popup = new popup('<div style="position: absolute; height: 150px; width: 100%; top: calc((100% - 150px) / 2);">' +
+                        '<h1 align="center" style="color: #E94B3C;">This entity is currently not supported.</h1>' +
+                        '<h1 align="center" style="color: #E94B3C;">The currently supported entities are: <span style="color: #00A591;">Bugs</span></h1>' +
+                        '</div>');
+
+                    popup.show();
+                }
+            });
         });
     });
-
+    
 // Dependencies Explained Here: https://dev.targetprocess.com/v1.0/docs/dependencies
+
+/*
+TODOs:
+1. Fix - Menu displays on boards after navigating away from an entity view.
+2. Fix - Unable to re-open the popup. if !exists then create else show
+*/
