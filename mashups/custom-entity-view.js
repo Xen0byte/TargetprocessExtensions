@@ -5,25 +5,16 @@ tau.mashups
     .addDependency('tp3/mashups/popup')
     .addMashup(function ($, view, topmenu, popup) {
         view.onRender(function () {
-            var entityType = "NONE";
-
-            function isOnPage() {
-                if ($("div.view-header__icon em.tau-entity-icon.tau-entity-icon-full").length) {
-                    entityType = document.querySelector("div.view-header__icon em.tau-entity-icon.tau-entity-icon-full").textContent;
-                }
-
-                console.log("[DEBUG] Entiy Type: " + entityType);
-                return entityType;
-            }
-
+            var entityIdentifier = "div.view-header__icon em.tau-entity-icon.tau-entity-icon-full";
             var menuItem = topmenu.addItem({ title: 'Coming Soon™', icon: 'global-settings' });
 
-            menuItem.addItem('Customize View').onClick(function () {
-                if (isOnPage() === "Bug") {
-                    popup = new popup('<div style="position: absolute; height: 150px; width: 100%; top: calc((100% - 150px) / 2);">' +
-                    '<h1 align="center"><span style="color: #00A591;">Coming Soon™</span></h1>' +
-                    '</div>');
+            var entityType = $(entityIdentifier).is(":visible") ? document.querySelector(entityIdentifier).textContent : "NONE";
 
+            menuItem.addItem('Customize View').onClick(function () {
+                if (entityType === "Bug") {
+                    popup = new popup('<div style="position: absolute; height: 150px; width: 100%; top: calc((100% - 150px) / 2);">' +
+                        '<h1 align="center"><span style="color: #00A591;">Coming Soon™</span></h1>' +
+                        '</div>');
                     popup.show();
                 }
                 else {
@@ -31,13 +22,12 @@ tau.mashups
                         '<h1 align="center" style="color: #E94B3C;">This entity is currently not supported.</h1>' +
                         '<h1 align="center" style="color: #E94B3C;">The currently supported entities are: <span style="color: #00A591;">Bugs</span></h1>' +
                         '</div>');
-
                     popup.show();
                 }
             });
         });
     });
-    
+
 // Dependencies Explained Here: https://dev.targetprocess.com/v1.0/docs/dependencies
 
 /*
