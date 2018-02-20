@@ -18,11 +18,17 @@ tau.mashups
 
                 if (entityType === "Bug")
                 {
-                    popup = new popup('<div style="position: absolute; height: 150px; width: 100%; top: calc((100% - 150px) / 2);">' +
+                    popupInstance = new popup('<div style="position: absolute; height: 150px; width: 100%; top: calc((100% - 150px) / 2);">' +
                         '<h1 align="center"><span style="color: #00A591;">Coming Soon™</span></h1>' +
                         '</div>');
 
-                    popup.show();
+                    popupInstance.show();
+                    var containers = [].slice.call(document.querySelectorAll("div.tau-container.ui-collapsible"));
+
+                    containers.forEach(function (container)
+                    {
+                        console.log(container);
+                    });
                 }
                 else
                 {
@@ -38,6 +44,3 @@ tau.mashups
     });
 
 // Dependencies Explained Here: https://dev.targetprocess.com/v1.0/docs/dependencies
-
-// TODOs:
-// unable to re-open popup; if !exists then create, else show
