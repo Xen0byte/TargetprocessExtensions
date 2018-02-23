@@ -34,8 +34,8 @@ tau.mashups
 
                     for (i = 0; i < containers.length; i++)
                     {
-                        var newListItem = $(contentList).append('<li style="box-sizing: border-box; height: calc(45% - 12px); width: calc(25% - 12px); float: left; margin: 3px; border: 3px solid #00A591;"><span>' +
-                            containers[i] + '</span></li>');
+                        var newListItem = $(contentList).append('<li style="overflow: auto; box-sizing: border-box; height: calc(45% - 12px); width: calc(25% - 12px);' +
+                            'float: left; margin: 3px; padding: 5px; border: 3px solid #00A591;"><span>' + containers[i].innerHTML + '</span></li>');
                     }
                 }
 
