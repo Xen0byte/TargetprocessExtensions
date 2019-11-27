@@ -1,0 +1,536 @@
+{
+  "root": {
+    "type": "grid",
+    "columns": [
+      "minmax(70%, 1fr)",
+      "minmax(260px, 560px)"
+    ],
+    "rows": [
+      "100%"
+    ],
+    "components": [
+      {
+        "type": "stack",
+        "orientation": "column",
+        "gridColumn": 1,
+        "gridRow": 1,
+        "components": [
+          {
+            "type": "component",
+            "component": "breadcrumbs",
+            "componentId": "component_189xpal"
+          },
+          {
+            "type": "component",
+            "component": "title",
+            "componentId": "component_lwys754"
+          },
+          {
+            "type": "stack",
+            "orientation": "column",
+            "components": [
+              {
+                "id": "tabs",
+                "type": "sections",
+                "sections": [
+                  {
+                    "title": {
+                      "type": "string",
+                      "value": "Description",
+                      "localize": true
+                    },
+                    "component": {
+                      "type": "stack",
+                      "orientation": "column",
+                      "components": [
+                        {
+                          "type": "tags",
+                          "componentId": "tags_6nixf6c"
+                        },
+                        {
+                          "type": "description",
+                          "componentId": "description_7kj04uf"
+                        },
+                        {
+                          "type": "customFieldsLongDefault",
+                          "componentId": "customFieldsLongDefault_6eoj0ul",
+                          "components": []
+                        },
+                        {
+                          "type": "attachments",
+                          "componentId": "attachments_59o9fg0"
+                        },
+                        {
+                          "type": "comments",
+                          "componentId": "comments_kira21e"
+                        }
+                      ],
+                      "componentId": "stack_1nfepak"
+                    },
+                    "componentId": "section_620t1rr"
+                  },
+                  {
+                    "title": {
+                      "type": "string",
+                      "value": "Tests",
+                      "localize": true
+                    },
+                    "titleExtra": {
+                      "type": "testHierarchyLabel",
+                      "componentId": "testHierarchyLabel_ovos4to"
+                    },
+                    "component": {
+                      "type": "component",
+                      "component": "layout.list",
+                      "properties": {
+                        "listType": "linkedTestPlan"
+                      },
+                      "componentId": "component_urgcj35"
+                    },
+                    "componentId": "section_9b6o7d1"
+                  },
+                  {
+                    "title": {
+                      "type": "string",
+                      "value": "Test Case Runs",
+                      "localize": true
+                    },
+                    "titleExtra": {
+                      "type": "component",
+                      "component": "label",
+                      "properties": {
+                        "text": "",
+                        "countFieldNames": [
+                          "TestCaseRuns"
+                        ]
+                      },
+                      "componentId": "component_eq8en5d"
+                    },
+                    "component": {
+                      "type": "component",
+                      "component": "layout.list",
+                      "properties": {
+                        "listType": "testCaseRuns"
+                      },
+                      "componentId": "component_ope08ml"
+                    },
+                    "componentId": "section_r7ss5ou"
+                  },
+                  {
+                    "title": {
+                      "type": "string",
+                      "value": "Relations",
+                      "localize": true
+                    },
+                    "titleExtra": {
+                      "type": "component",
+                      "component": "label.relationCount",
+                      "properties": {
+                        "text": ""
+                      },
+                      "componentId": "component_v47vknl"
+                    },
+                    "component": {
+                      "type": "component",
+                      "component": "relations.container",
+                      "properties": {
+                        "name": "relations container"
+                      },
+                      "componentId": "component_0eye9w9"
+                    },
+                    "componentId": "section_nlbsdtj"
+                  },
+                  {
+                    "title": {
+                      "type": "string",
+                      "value": "Source code",
+                      "localize": true
+                    },
+                    "component": {
+                      "type": "component",
+                      "component": "revisionList",
+                      "componentId": "component_6qxckfu"
+                    },
+                    "componentId": "section_pw19ou1"
+                  },
+                  {
+                    "title": {
+                      "type": "string",
+                      "value": "Flow",
+                      "localize": true
+                    },
+                    "component": {
+                      "type": "component",
+                      "component": "implementationHistory",
+                      "componentId": "component_np04p79"
+                    },
+                    "componentId": "section_8m2cbt5"
+                  },
+                  {
+                    "title": {
+                      "type": "string",
+                      "value": "Time",
+                      "localize": true
+                    },
+                    "titleExtra": {
+                      "type": "component",
+                      "component": "label.generalCounter",
+                      "properties": {
+                        "collectionField": "times",
+                        "text": ""
+                      },
+                      "componentId": "component_l53qx2v"
+                    },
+                    "component": {
+                      "type": "component",
+                      "component": "layout.list",
+                      "properties": {
+                        "listType": "time",
+                        "name": "Times"
+                      },
+                      "componentId": "component_3q3mk7x"
+                    },
+                    "componentId": "section_gkpwya1"
+                  },
+                  {
+                    "title": {
+                      "type": "string",
+                      "value": "History",
+                      "localize": true
+                    },
+                    "component": {
+                      "type": "component",
+                      "component": "auditHistory",
+                      "componentId": "component_uovrhva"
+                    },
+                    "componentId": "section_a6ede8w"
+                  }
+                ],
+                "componentId": "sections_mjn1chl"
+              }
+            ],
+            "componentId": "stack_5a8pttd"
+          }
+        ],
+        "componentId": "stack_j8irixc"
+      },
+      {
+        "type": "loadingCover",
+        "gridColumn": 2,
+        "gridRow": 1,
+        "properties": {
+          "height": "100vh"
+        },
+        "component": {
+          "type": "stack",
+          "orientation": "column",
+          "components": [
+            {
+              "type": "stack",
+              "orientation": "row-reverse",
+              "components": [
+                {
+                  "type": "actionsMenu",
+                  "componentId": "actionsMenu_0p0fejc"
+                },
+                {
+                  "type": "quickAdd",
+                  "componentId": "quickAdd_h06ykhw"
+                },
+                {
+                  "type": "shareEntity",
+                  "componentId": "shareEntity_m7qy86b"
+                },
+                {
+                  "type": "followButton",
+                  "componentId": "followButton_b7rku0h"
+                }
+              ],
+              "componentId": "stack_4y8pa02"
+            },
+            {
+              "type": "property.teamEntityState",
+              "componentId": "property.teamEntityState_yipae6x"
+            },
+            {
+              "type": "property.teams",
+              "componentId": "property.teams_c5tlw47"
+            },
+            {
+              "type": "collapsible",
+              "title": {
+                "type": "string",
+                "value": "Assignments",
+                "localize": true
+              },
+              "component": {
+                "type": "component",
+                "component": "assignmentsList",
+                "componentId": "component_a53e3l0"
+              },
+              "componentId": "collapsible_mt0yesw"
+            },
+            {
+              "type": "component",
+              "component": "panel.linkedTestPlan",
+              "componentId": "component_janjkcu"
+            },
+            {
+              "type": "collapsible",
+              "title": {
+                "type": "string",
+                "value": "DevOps integration",
+                "localize": false
+              },
+              "component": {
+                "type": "devops-info",
+                "component": "DevOpsInfoComponent",
+                "componentId": "devops_component"
+              },
+              "componentId": "collapsible_devops_us"
+            },
+            {
+              "type": "collapsible",
+              "title": {
+                "type": "string",
+                "value": "Core Information",
+                "localize": true
+              },
+              "component": {
+                "type": "stack",
+                "orientation": "column",
+                "components": [
+                  {
+                    "type": "property.owner.project",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "value": "Owner",
+                        "localize": true
+                      }
+                    },
+                    "componentId": "property.owner.project_svtd6ts"
+                  },
+                  {
+                    "type": "property.priority",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "value": "Business Value",
+                        "localize": true
+                      }
+                    },
+                    "componentId": "property.priority_gu0tgwg"
+                  },
+                  {
+                    "type": "property.severity",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "value": "Severity",
+                        "localize": true
+                      }
+                    },
+                    "componentId": "property.severity_w7xn13c"
+                  },
+                  {
+                    "type": "property.createDate",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "value": "Creation Date",
+                        "localize": true
+                      }
+                    },
+                    "componentId": "property.createDate_h7vpigq"
+                  },
+                  {
+                    "type": "property.startDate.assignable",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "value": "Start Date",
+                        "localize": true
+                      },
+                      "editable": true
+                    },
+                    "componentId": "property.startDate.assignable_nl5etxp"
+                  },
+                  {
+                    "type": "property.completeDate",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "value": "Completion Date",
+                        "localize": true
+                      },
+                      "editable": true
+                    },
+                    "componentId": "property.completeDate_73mqho0"
+                  }
+                ],
+                "componentId": "stack_b3rak4q"
+              },
+              "componentId": "collapsible_lh147lp"
+            },
+            {
+              "type": "collapsible",
+              "title": {
+                "type": "string",
+                "value": "Custom Fields",
+                "localize": true
+              },
+              "component": {
+                "type": "customFieldsShortDefault",
+                "componentId": "customFieldsShortDefault_w0lfqfr",
+                "components": [
+                  {
+                    "type": "property.customField",
+                    "properties": {
+                      "name": "Complexity"
+                    },
+                    "componentId": "property.customField_b61mtmk"
+                  },
+                  {
+                    "type": "property.customField",
+                    "properties": {
+                      "name": "Resolution"
+                    },
+                    "componentId": "property.customField_nyhv661"
+                  },
+                  {
+                    "type": "property.customField",
+                    "properties": {
+                      "name": "State of Fix"
+                    },
+                    "componentId": "property.customField_t64nudn"
+                  },
+                  {
+                    "type": "property.customField",
+                    "properties": {
+                      "name": "Support Ticket ID"
+                    },
+                    "componentId": "property.customField_la1596e"
+                  },
+                  {
+                    "type": "property.customField",
+                    "properties": {
+                      "name": "Occurs On Production"
+                    },
+                    "componentId": "property.customField_d3q86yp"
+                  }
+                ]
+              },
+              "componentId": "collapsible_fygi8nc"
+            },
+            {
+              "type": "collapsible",
+              "title": {
+                "type": "string",
+                "value": "Additional Information",
+                "localize": true
+              },
+              "component": {
+                "type": "stack",
+                "orientation": "column",
+                "components": [
+                  {
+                    "type": "property.project",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "value": "Project",
+                        "localize": true,
+                        "useTerms": true
+                      }
+                    },
+                    "componentId": "property.project_xw4x393"
+                  },
+                  {
+                    "type": "property.feature",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "value": "Feature",
+                        "localize": true,
+                        "useTerms": true
+                      }
+                    },
+                    "componentId": "property.feature_ie5gpvj"
+                  },
+                  {
+                    "type": "property.userStory",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "value": "userStory",
+                        "localize": true,
+                        "useTerms": true
+                      }
+                    },
+                    "componentId": "property.userStory_39qnda8"
+                  },
+                  {
+                    "type": "property.release",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "value": "Release",
+                        "localize": true,
+                        "useTerms": true
+                      }
+                    },
+                    "componentId": "property.release_78feoo1"
+                  },
+                  {
+                    "type": "property.build",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "value": "Build",
+                        "localize": true,
+                        "useTerms": true
+                      }
+                    },
+                    "componentId": "property.build_rcsyp1t"
+                  },
+                  {
+                    "id": "iteration",
+                    "type": "property.iteration",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "value": "Iteration",
+                        "localize": true,
+                        "useTerms": true
+                      }
+                    },
+                    "componentId": "property.iteration_ochx3j9"
+                  },
+                  {
+                    "type": "property.teamIteration",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "value": "teamIteration",
+                        "localize": true,
+                        "useTerms": true
+                      }
+                    },
+                    "componentId": "property.teamIteration_umisg7p"
+                  }
+                ],
+                "componentId": "stack_bl0de3q"
+              },
+              "componentId": "collapsible_xr2fbfr"
+            }
+          ],
+          "componentId": "stack_bir1tw9"
+        },
+        "componentId": "loadingCover_l1qc5i0"
+      }
+    ],
+    "componentId": "grid_437liqr"
+  },
+  "integrations": {}
+}
